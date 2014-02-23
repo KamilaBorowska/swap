@@ -9,13 +9,9 @@ inline
 #endif
 static void swap_internal(void *a_ref, void *b_ref, size_t size) {
     size_t i;
-    /*
-     * Such rather strange loop is caused by the fact that it has to be
-     * able to iterate is by maximum size_t size, even if unlikely.
-     */
     char *a = a_ref;
     char *b = b_ref;
-    for (i = 0; i != size; i++) {
+    for (i = 0; i < size; i++) {
         char tmp = *a;
         *a = *b;
         *b = tmp;

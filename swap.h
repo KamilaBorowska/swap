@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+/* Conditional detects common mistakes about mixing pointer types. */
 #define SWAP(a, b) swap_internal(&(a), &(b), sizeof *(1 ? &(a) : &(b)))
 
 #if __STDC_VERSION__ >= 199901L
